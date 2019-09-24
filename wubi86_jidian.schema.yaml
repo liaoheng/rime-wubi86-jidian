@@ -3,16 +3,18 @@
 
 schema:
   schema_id: wubi86_jidian
-  name: "极点五笔86"
+  name: "极点五笔拼音"
   version: "1.0"
   author:
     - 创始人 王永民先生
   description: |
-    五笔字形 86 极点极爽版
+    极点五笔字86版加拼音简繁功能
   dependencies:
     - pinyin_simp
 
 switches:
+  - name: zh_trad
+    states: [ 简体, 繁體 ]
   - name: ascii_mode
     reset: 0
     states: [ 中文, 西文 ]
@@ -46,25 +48,32 @@ engine:
     - lua_translator@date_translator # 自定义系统变量输出
   filters:
 #    - lua_filter@single_char_first_filter # 单字优先方法
+    - simplifier
+    - uniquifier
+    
+simplifier:
+  opencc_config: s2t.json
+  option_name: zh_trad
 
 speller:
-
-  max_code_length: 4                    # 四码上屏
+  #max_code_length: 4                    # 四码上屏
   auto_select: true                     # 自动上屏
   auto_select_unique_candidate: true    # 无重码自动上屏
 
 translator:
   dictionary: wubi86_jidian             # 翻译器将调取此字典文件
   enable_charset_filter: true
-  enable_sentence: false                # 开关语句模式
-  enable_user_dict: false               # 是否开启用户词典（用户词典记录动态字词频，用户词）
+  enable_sentence: true                # 开关语句模式
+  enable_user_dict: true               # 是否开启用户词典（用户词典记录动态字词频，用户词）
   enable_encoder: true                  # 自动造词
-  encode_commit_history: false          # 是否对已上屏的词自动造词
-  max_phrase_length: 10                 # 单词最大词长
-  db_class: tabledb                     # userdb - 二进制 / tabledb - 人类语言
+  encode_commit_history: true          # 是否对已上屏的词自动造词
+  max_phrase_length: 4                 # 单词最大词长
   disable_user_dict_for_patterns:       # z开头的输入忽略，对应下面的拼音反查，
     - "^z.*$"
 
+abc_segmentor:
+  extra_tags:
+    - reverse_lookup
 
 reverse_lookup:
   dictionary: pinyin_simp

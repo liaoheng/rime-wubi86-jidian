@@ -1,8 +1,5 @@
 # 
-![最好用的五笔输入法](https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/2019-03-02%2012-34-37.2019-03-02%2012_44_17.gif)
-
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE) [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
-
 
 
 ## 前言
@@ -25,7 +22,6 @@ __用极点输入法的原因__
 
 这里导入的极点版是重码很少的，打起字来很爽的。而且对标点的支持也很好。之前用的 `清歌输入法`，但该输入法有个弊端，对于我这种前端工程师来说，会在工作中用到数字左边那个键 `~`，而清歌输入法把这个键作为临时拼音输入的入口，用起来就各种麻烦。现在换成 RIME 简直爽翻了。 好久没有这么爽的打过字了。
 
-<img src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/Rime%E4%BA%94%E7%AC%94%E8%BE%93%E5%85%A5%E6%B3%95.gif" width=600 title="Rime五笔输入法输入样子">
 
 
 ## 使用前的一些用户习惯说明
@@ -53,36 +49,16 @@ translator:
 去 [官网下载](https://rime.im/download/)
 下载后按照步骤安装即可
 
+## 安装依赖
+```bash
+  bash rime-install pinyin-simp # linux/unix
+  rime-install.bat pinyin-simp # windiws
+```
 
 ## 下载 五笔配置文件
 
 也就是当前库，直接下载即可
-> 五笔输入法-极点版： https://github.com/KyleBing/rime-wubi86-jidian
-
-其中的文件列表有：
-
-```bash
-.
-├── README.md                               # 当前说明文档
-├── rime.lua                                # 可以输出系统变量的函数
-├── default.custom.yaml                     # 用记自定义的一些输入方式或方向
-├── pinyin_simp.dict.yaml                   # 简体拼音码表 - 五笔中拼音输入需要的
-├── pinyin_simp.schema.yaml                 # 简体拼音解释器
-├── squirrel.custom.yaml                    # 鼠须管（for macOS）输入法候选词界面
-├── weasel.custom.yaml                      # 小狼毫（for Windows）输入法候选词界面
-├── wubi86_jidian.dict.yaml                 # 极点 - 五笔码表
-├── wubi86_jidian.schema.yaml               # 极点 - 五笔码表解释器
-├── wubi86_jidian_user.dict.yaml            # 极点 - 五笔用户自定义词
-├── wubi86_jidian_extra_brand.dict.yaml     # 扩展词库 - 品牌
-├── wubi86_jidian_extra_english.dict.yaml   # 扩展词库 - 常用英文
-├── wubi86_jidian_extra_location.dict.yaml  # 扩展词库 - 地名
-├── wubi86_jidian_extra_media.dict.yaml     # 扩展词库 - 影视名，音乐名
-├── wubi86_jidian_extra_people.dict.yaml    # 扩展词库 - 名人
-├── wubi86_jidian_extra_pro.dict.yaml       # 扩展词库 - 专业名词
-├── wubi_pinyin.schema.yaml                 # 五笔拼音混输
-└── wubi_trad.schema.yaml                   # 五笔简入繁出
-```
-
+> 五笔输入法-极点版： https://github.com/liaoheng/rime-wubi86-jidian
 
 ## 设置五笔输入法
 
@@ -98,11 +74,6 @@ translator:
 ```bash
 ~/Library/
 └── Rime
-    ├── README.md
-    ├── default.custom.yaml
-    ├── pinyin_simp.dict.yaml
-    ├── pinyin_simp.schema.yaml
-    ├── squirrel.custom.yaml
     ├── wubi86_jidian.dict.yaml
     ├── wubi86_jidian.schema.yaml
     ├── wubi86_jidian_user.schema.yaml
@@ -128,19 +99,13 @@ translator:
 3. 把该项目中的文件复制到里面
 4. 点击开始菜单中的【部署】即可
 
-
-
-## 皮肤
-
-macOS系统的相应参数还不是很了解，windows的我知道，如果有知道的，肯请告知一二，谢谢 点此 https://github.com/KyleBing/rime-wubi86-jidian/issues/5
-
-<img title="skin" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/skin.png" width=500>
-
-
-Windows
-
-<img title="skin" src="https://github.com/KyleBing/rime-wubi86-jidan/blob/master/imgs/rime_skin_windows.png" width=300>
-
+### 配置
+编辑`default.custom.yaml`文件：
+```yaml
+patch:
+  schema_list:
+    - {schema: wubi86_jidian} #添加
+```
 
 ## 相关链接
 
@@ -164,9 +129,6 @@ Windows
 所有配置说明都在配置文件中说明了
 
 ```bash
-├── squirrel.custom.yaml                    # macOS 鼠须管输入法候选词界面
-├── weasel.custom.yaml                      # windows 小狼毫输入法候选词界面
-├── default.custom.yaml                     # 用于自定义的一些输入方式，符号，中英文切换
 ├── wubi86_jidian.schema.yaml               # 极点 - 五笔码表解释器
 ├── wubi86_jidian_user.dict.yaml            # 极点 - 五笔用户扩展词库
 ├── wubi86_jidian_extra_brand.dict.yaml     # 扩展词库 - 品牌
@@ -180,6 +142,7 @@ Windows
 输出系统时间和日期用：
 - date 输出日期，格式 `2019年06月19日`
 - time 输出时间，格式 `10:00`
+- datetime 输出日期，格式 `2019-06-19 10:00`
 
 
 ## 输出系统变量
