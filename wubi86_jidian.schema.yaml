@@ -4,9 +4,11 @@
 schema:
   schema_id: wubi86_jidian
   name: "极点五笔拼音"
-  version: "1.0"
+  version: "0.1"
   author:
     - 创始人 王永民先生
+    - KyleBing <kylebing@163.com>
+    - liaoheng <liaohengcn@gmail.com>
   description: |
     极点五笔字86版加拼音简繁功能
   dependencies:
@@ -47,7 +49,6 @@ engine:
     - table_translator
     - lua_translator@date_translator # 自定义系统变量输出
   filters:
-#    - lua_filter@single_char_first_filter # 单字优先方法
     - simplifier
     - uniquifier
 
