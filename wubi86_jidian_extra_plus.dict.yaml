@@ -1,8 +1,10 @@
+# Rime dict [增强词库]
+# encoding: utf-8
+
 ---
-name: wubi86_jidian_extra_english
-note: "常用英文单词"
-version: "2019-09-06"
-last_edit_time: "2019-09-06"
+name: wubi86_jidian_extra_plus
+version: "0.0.1"
+last_edit_time: "2019-02-28"
 
 sort: original
 # 码表的排序方式
@@ -16,15 +18,25 @@ sort: original
 
 ...
 
+# 编程语言
+Java	java
+C++	cpp
+Python	py
+JavaScript	js
+Kotlion	kt
+
+# 计算机相关
+Linux	lin
+Windows	win
+Computer	pc
+Laptop	note
+Android	and
+
+# 数码相关
 MacbookPro	mbp
-Apple	appl
-iPod	ipod
-iPad	ipad
-iPhone	ipho
-mini	mini
-Google	goo
 Xiaomi	mi
 Huawei	haw
 Vovo	vovo
 Oppo	oppo
-
+Xbox	xbox
+PlayStation	ps

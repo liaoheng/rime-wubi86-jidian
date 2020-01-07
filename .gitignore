@@ -1,1 +1,8 @@
+*.*
+/*
+!.gitignore
+!LICENSE.md
+!rime.lua
+!wubi86_jidian_*.yaml
+!wubi86_jidian.*.yaml
 wubi86_jidian_user.dict.yaml
