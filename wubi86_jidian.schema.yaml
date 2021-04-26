@@ -3,14 +3,15 @@
 
 schema:
   schema_id: wubi86_jidian
-  name: "极点五笔拼音"
-  version: "0.1"
+  name: "极点五笔字86版"
+  version: "0.2"
   author:
-    - 创始人 王永民先生
+    - 王永民先生
+    - 杜志民先生
     - KyleBing <kylebing@163.com>
     - liaoheng <liaohengcn@gmail.com>
   description: |
-    极点五笔字86版加拼音简繁功能
+    极点五笔字86版+简繁转换
   dependencies:
     - pinyin_simp
 
