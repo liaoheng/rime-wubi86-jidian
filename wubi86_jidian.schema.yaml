@@ -19,7 +19,7 @@ switches:
   - name: zh_trad
     states: [ 简体, 繁體 ]
   - name: ascii_mode
-    reset: 0
+    reset: 1
     states: [ 中文, 西文 ]
 
 engine:

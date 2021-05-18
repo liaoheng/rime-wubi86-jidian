@@ -1,4 +1,3 @@
-# 
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE) [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
 
 
@@ -22,16 +21,23 @@
 ## 配置文件(default.custom.yaml)
 
 ```yaml
+
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.12.0
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Tue Nov 27 22:32:18 2018"
+  rime_version: 1.3.2
 patch:
   schema_list:
-    - {schema: luna_pinyin}
+    - {schema: luna_pinyin_simp}
     - {schema: wubi86_jidian}
-  style:
-    font_face: "明兰"
-    font_point: 14
+ # style:
+ #   font_face: "明兰"
+ #   font_point: 14
   ascii_composer:
     switch_key:
-      Shift_R: commit_code #回车止屏
+      Shift_R: commit_code
   switcher:
     hotkeys:
       - "Control+Alt+p"
