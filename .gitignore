@@ -1,9 +1,10 @@
 *.*
 /*
 !.gitignore
-!LICENSE.md
+!LICENSE
 !rime.lua
 !wubi86_jidian_*.yaml
 !wubi86_jidian.*.yaml
 !pinyin_simp.*.yaml
+!wubi86_jidian.ico
 wubi86_jidian_user.dict.yaml

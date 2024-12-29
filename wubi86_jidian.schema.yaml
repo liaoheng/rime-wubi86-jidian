@@ -3,24 +3,25 @@
 
 schema:
   schema_id: wubi86_jidian
-  name: "极点五笔字86版"
-  version: "0.2"
+  name: "极点五笔86版"
+  version: "0.3"
+  icon: "wubi86_jidian.ico"
   author:
     - 王永民先生
     - 杜志民先生
     - KyleBing <kylebing@163.com>
     - liaoheng <liaohengcn@gmail.com>
   description: |
-    极点五笔字86版+简繁转换
+    极点五笔86版+简繁转换
   dependencies:
     - pinyin_simp
 
 switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
   - name: zh_trad
     states: [ 简体, 繁體 ]
-  - name: ascii_mode
-    reset: 1
-    states: [ 中文, 西文 ]
 
 engine:
   processors:
